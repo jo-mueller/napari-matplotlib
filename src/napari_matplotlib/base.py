@@ -10,20 +10,12 @@ from matplotlib.backends.backend_qt5agg import (
 from qtpy.QtGui import QIcon
 from qtpy.QtWidgets import QVBoxLayout, QWidget
 
-mpl.rc("axes", edgecolor="white")
-mpl.rc("axes", facecolor="#262930")
-mpl.rc("axes", labelcolor="white")
-mpl.rc("savefig", facecolor="#262930")
-mpl.rc("text", color="white")
-
-mpl.rc("xtick", color="white")
-mpl.rc("ytick", color="white")
+import pathlib, os
 
 # Icons modified from
 # https://github.com/matplotlib/matplotlib/tree/main/lib/matplotlib/mpl-data/images
 ICON_ROOT = Path(__file__).parent / "icons"
 __all__ = ["NapariMPLWidget"]
-
 
 class NapariMPLWidget(QWidget):
     """
@@ -53,6 +45,7 @@ class NapariMPLWidget(QWidget):
         super().__init__()
 
         self.viewer = napari_viewer
+
         self.canvas = FigureCanvas()
         self.canvas.figure.set_tight_layout(True)
         self.canvas.figure.patch.set_facecolor("#262930")
