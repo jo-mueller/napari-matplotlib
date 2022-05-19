@@ -1,0 +1,7 @@
+axes.edgecolor : white
+axes.facecolor : (0.14901961, 0.16078431, 0.18823529)
+axes.labelcolor : white
+text.color : white
+
+xtick.color : white
+ytick.color : white
